@@ -1,3 +1,45 @@
+/* Fontes hospedadas no próprio site (subconjunto latin, cobre português) — antes vinham do Google Fonts */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fontes/bebas-neue-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fontes/poppins-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fontes/poppins-500.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fontes/poppins-600.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fontes/poppins-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ==========================================================================
    Bento Churrasqueiras — Home
    Medidas de referência: Figma, frame de 1920px com grid de 1280px (margem 320px).
@@ -1658,7 +1700,7 @@ html.lenis { scroll-behavior: auto; }
   border-bottom: 1px solid rgba(41, 41, 41, .14);
   scroll-margin-top: 40px;
 }
-.modelo__num { font-family: var(--fonte-titulo); font-size: 64px; line-height: .85; color: var(--laranja); }
+.modelo__num { font-family: var(--fonte-titulo); font-size: 64px; line-height: .85; color: var(--laranja-escuro); } /* laranja-base fica abaixo de 3:1 no fundo claro */
 .modelo__texto h3 { font-family: var(--fonte-titulo); font-weight: 400; font-size: clamp(36px, 3vw, 52px); line-height: 1; }
 .modelo__texto p { margin-top: 14px; max-width: 560px; font-size: 17px; line-height: 1.65; color: rgba(41, 41, 41, .72); }
 .modelo__specs { display: grid; gap: 10px; align-content: start; padding-top: 8px; }
@@ -2205,6 +2247,7 @@ html.lenis { scroll-behavior: auto; }
   min-height: 44px;
 }
 .catalogo__campo input::placeholder { color: rgba(41, 41, 41, .4); }
+.catalogo__campo .catalogo__nome { flex: .8; border-right: 1px solid rgba(41, 41, 41, .18); margin-right: 18px; padding-right: 12px; }
 .catalogo__campo .botao { min-height: 48px; padding-inline: 28px; font-size: 14px; letter-spacing: .04em; }
 .catalogo .aviso { flex-basis: 100%; font-size: 14px; color: rgba(41, 41, 41, .7); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -2280,6 +2323,9 @@ html.lenis { scroll-behavior: auto; }
   .link-seta { display: inline-flex; align-items: center; min-height: 44px; padding-bottom: 0; background-position: 0 calc(100% - 9px); }
   .canal { padding: 18px 0; }
   .catalogo__campo { padding-left: 18px; }
+  /* no celular: nome em cima, WhatsApp e botão embaixo, na mesma cápsula */
+  .catalogo__campo { flex-wrap: wrap; height: auto; border-radius: 28px; padding-top: 4px; }
+  .catalogo__campo .catalogo__nome { flex: 1 1 100%; border-right: 0; border-bottom: 1px solid rgba(41, 41, 41, .18); margin: 0 5px 5px 0; padding-right: 0; }
   .prova__over, .linhas-intro__over { gap: 12px; letter-spacing: .22em; white-space: nowrap; }
   .prova__traco, .prova__over::after, .linhas-intro__traco, .linhas-intro__over::after { width: 22px; }
   .numero { padding: 28px 10px; }
