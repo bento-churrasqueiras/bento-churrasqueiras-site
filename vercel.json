@@ -1,23 +1,23 @@
 {
   "redirects": [
-    { "source": "/produtos-old/smartgrill/:resto*", "destination": "/smartgrill/", "permanent": true },
-    { "source": "/produtos-old/duragrill/:resto*", "destination": "/duragrill/", "permanent": true },
-    { "source": "/produtos-old/:resto*", "destination": "/produtos/", "permanent": true },
-    { "source": "/produtos/:linha(smartgrill|duragrill|elevatto)/:resto*", "destination": "/:linha/", "permanent": true },
-    { "source": "/produtos/:item(grelhas?|grelha-[^/]*|parrilla[^/]*)/:resto*", "destination": "/grelhas/", "permanent": true },
-    { "source": "/produtos/:item(bifeiras?|cooktops?|bifeiras-e-cooktops|espetos?|espeto-[^/]*|costelao|acessorios)/:resto*", "destination": "/acessorios/", "permanent": true },
-    { "source": "/produtos/:item(suporte-de-fundo|espetos-suspensos)/:resto*", "destination": "/:item/", "permanent": true },
-    { "source": "/produtos/:resto+", "destination": "/produtos/", "permanent": true },
-    { "source": "/:pagina(catalogo-de-produtos|catalogo|configurator|monte-sua-churrasqueira)/:resto*", "destination": "/produtos/", "permanent": true },
-    { "source": "/churrasqueiras-rotativas-em-garibaldi/:resto*", "destination": "/produtos/", "permanent": true },
+    { "source": "/produtos-old/smartgrill(/.*)?", "destination": "/smartgrill/", "permanent": true },
+    { "source": "/produtos-old/duragrill(/.*)?", "destination": "/duragrill/", "permanent": true },
+    { "source": "/produtos-old(/.*)?", "destination": "/produtos/", "permanent": true },
+    { "source": "/produtos/:linha(smartgrill|duragrill|elevatto)(/.*)?", "destination": "/:linha/", "permanent": true },
+    { "source": "/produtos/:item(grelhas?|grelha-[^/]*|parrilla[^/]*)(/.*)?", "destination": "/grelhas/", "permanent": true },
+    { "source": "/produtos/:item(bifeiras?|cooktops?|bifeiras-e-cooktops|espetos?|espeto-[^/]*|costelao|acessorios)(/.*)?", "destination": "/acessorios/", "permanent": true },
+    { "source": "/produtos/:item(suporte-de-fundo|espetos-suspensos)(/.*)?", "destination": "/:item/", "permanent": true },
+    { "source": "/produtos/(.+)", "destination": "/produtos/", "permanent": true },
+    { "source": "/:pagina(catalogo-de-produtos|catalogo|configurator|monte-sua-churrasqueira)(/.*)?", "destination": "/produtos/", "permanent": true },
+    { "source": "/churrasqueiras-rotativas-em-garibaldi(/.*)?", "destination": "/produtos/", "permanent": true },
 
-    { "source": "/:pagina(quem-somos|sobre|sobre-nos|a-empresa)/:resto*", "destination": "/empresa/", "permanent": true },
-    { "source": "/:pagina(fale-conosco|contatos)/:resto*", "destination": "/contato/", "permanent": true },
-    { "source": "/:pagina(assistencia-tecnica|suporte|garantia|manuais)/:resto*", "destination": "/assistencia/", "permanent": true },
-    { "source": "/:pagina(galeria|portfolio|obras)/:resto*", "destination": "/projetos/", "permanent": true },
+    { "source": "/:pagina(quem-somos|sobre|sobre-nos|a-empresa)(/.*)?", "destination": "/empresa/", "permanent": true },
+    { "source": "/:pagina(fale-conosco|contatos)(/.*)?", "destination": "/contato/", "permanent": true },
+    { "source": "/:pagina(assistencia-tecnica|suporte|garantia|manuais)(/.*)?", "destination": "/assistencia/", "permanent": true },
+    { "source": "/:pagina(galeria|portfolio|obras)(/.*)?", "destination": "/projetos/", "permanent": true },
 
-    { "source": "/:pagina(blog|tags|tag|category|categoria|author|feed)/:resto*", "destination": "/", "permanent": true },
-    { "source": "/:post(pontos-da-carne-para-churrasco|dicas-para-seu-churrasco-ficar-ainda-melhor)/:resto*", "destination": "/", "permanent": true },
-    { "source": "/:pagina(loja|minha-conta|finalizar-compra|carrinho|backup|teste-formulario|404-2|lp-v1|lp-google|home)/:resto*", "destination": "/", "permanent": true }
+    { "source": "/:pagina(blog|tags|tag|category|categoria|author|feed)(/.*)?", "destination": "/", "permanent": true },
+    { "source": "/:post(pontos-da-carne-para-churrasco|dicas-para-seu-churrasco-ficar-ainda-melhor)(/.*)?", "destination": "/", "permanent": true },
+    { "source": "/:pagina(loja|minha-conta|finalizar-compra|carrinho|backup|teste-formulario|404-2|lp-v1|lp-google|home)(/.*)?", "destination": "/", "permanent": true }
   ]
 }
