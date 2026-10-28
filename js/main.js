@@ -365,16 +365,12 @@
     dados.telefone = dados.telefone || dados.whatsapp;
     dados.pagina = location.pathname;
     dados.utm = campanha();
-    // mesmo ref em cada nova tentativa do mesmo envio: o Salos não duplica o lead
-    form._ref = form._ref || (window.crypto && crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2));
-    dados.ref = form._ref;
     botao.disabled = true;
     aviso.textContent = "Enviando…";
     fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(dados) })
       .then(function (r) { if (!r.ok) throw new Error(r.status); })
       .then(function () {
         aviso.textContent = form.dataset.sucesso;
-        form._ref = null;
         form.reset();
       })
       .catch(function () {
@@ -382,6 +378,17 @@
       })
       .then(function () { botao.disabled = false; });
   }
+
+  // campo invisível contra robôs (fora da tela, fora do Tab, sem autocompletar)
+  document.querySelectorAll("[data-catalogo], [data-chamado]").forEach(function (form) {
+    var isca = document.createElement("input");
+    isca.name = "empresa_site";
+    isca.tabIndex = -1;
+    isca.autocomplete = "off";
+    isca.setAttribute("aria-hidden", "true");
+    isca.style.cssText = "position:absolute;left:-9999px;width:1px;height:1px;opacity:0";
+    form.appendChild(isca);
+  });
 
   document.querySelectorAll("[data-catalogo]").forEach(function (form) {
     form.dataset.sucesso = "Pronto! Em instantes o catálogo chega no seu WhatsApp.";

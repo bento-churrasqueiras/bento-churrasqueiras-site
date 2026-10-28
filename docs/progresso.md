@@ -108,4 +108,5 @@
 - Automações no Salos "Site · … → WhatsApp": a etiqueta no contato dispara a mensagem pelo WhatsApp "Davi Comercial" e a etiqueta sai do contato (assim um novo pedido dispara de novo; o card continua etiquetado).
 - Catálogo 2026 publicado em `/assets/catalogo/catalogo-bento-2026.pdf` (link vai na mensagem).
 - Contato: WhatsApp passou a ser obrigatório. Assistência: sem anexo no site; a mensagem pede as fotos no WhatsApp.
+- Proteção: só aceita envio com Origin do site, campo invisível contra robôs e no máximo um lead por número/formulário/dia (external_ref derivado no servidor).
 - Depende da variável `SALOS_API_KEY` (escopo `leads:write`) no projeto da Vercel da Bento.

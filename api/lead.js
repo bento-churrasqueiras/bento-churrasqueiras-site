@@ -2,7 +2,10 @@
 // A mensagem de WhatsApp sai por uma automação no Salos, disparada pela etiqueta.
 // A chave fica na variável SALOS_API_KEY da Vercel; nunca no código (o repo é público).
 
+const crypto = require("node:crypto");
+
 const SALOS = "https://app.salos.com.br/api/leads";
+const ORIGEM = /^https:\/\/(www\.)?bentochurrasqueiras\.com\.br$/;
 const FUNIL = "a5739379-d299-4298-bce2-22d63e6ed31b"; // Ativação
 const ETAPA = "80a270a7-90bf-4506-94b6-c0d094be8621"; // Entrada
 
@@ -29,12 +32,16 @@ function telefone(v) {
 module.exports = async function (req, res) {
   if (req.method !== "POST") return res.status(405).json({ ok: false });
 
+  // só aceita envio do próprio site
+  if (!ORIGEM.test(req.headers.origin || "")) return res.status(403).json({ ok: false });
+
   var b = req.body || {};
+  // campo invisível no formulário: só robô preenche
+  if (b.empresa_site) return res.status(200).json({ ok: true });
   var tipo = TIPOS[b.tipo];
   var fone = telefone(b.telefone);
   var email = texto(b.email, 200);
-  var ref = texto(b.ref, 100);
-  if (!tipo || !fone || !ref) return res.status(400).json({ ok: false, erro: "dados" });
+  if (!tipo || !fone) return res.status(400).json({ ok: false, erro: "dados" });
 
   var nome = texto(b.nome, 120) || "Visitante do site";
   var produto = texto(b.produto, 60);
@@ -46,7 +53,8 @@ module.exports = async function (req, res) {
   ].filter(Boolean).join("\n");
 
   var corpo = {
-    external_ref: "site-" + ref,
+    // um lead por número, por formulário, por dia: reenvio e abuso não multiplicam mensagens
+    external_ref: "site-" + crypto.createHash("sha256").update(b.tipo + fone + new Date().toISOString().slice(0, 10)).digest("hex").slice(0, 32),
     source: "Site",
     tags: [tipo.etiqueta],
     contact: { name: nome, phone: fone },
