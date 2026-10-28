@@ -128,7 +128,8 @@
 - Fontes (Bebas Neue + Poppins 400–700, subconjunto latin) hospedadas em `assets/fontes/` com preload; saiu o Google Fonts (2 servidores a menos antes de mostrar o texto). Licença OFL junto.
 - Foto de abertura das páginas de linha com `preload` + `fetchpriority="high"` (é fundo em CSS, o navegador só via tarde).
 - Selo "patenteado" da Elevatto: 640 px → 240 px (54 KB → 13 KB).
-- Números laranja dos "modelos" em `--laranja-escuro` (contraste 3,9:1 no fundo claro).
+- Números laranja dos "modelos" em `--laranja-escuro` (contraste 3,9:1 no fundo claro) e rótulos da tabela comparativa em `--laranja-texto` (#a84a15, 5:1).
+- Contato/Assistência: o maior elemento é o parágrafo da abertura, que entra com o efeito escalonado depois das fontes; ~1,9 s real, ~6 s no celular simulado do Lighthouse. Mantido (mexer quebra a animação dos títulos).
 - Cache: fontes 1 ano (imutável), imagens 7 dias (`vercel.json`).
 - Catálogo pede "Seu nome" (obrigatório); no celular a cápsula vira duas linhas.
 - Ícones: `favicon.ico` (48 px), `apple-touch-icon` 180 px, ícones 192/512 e `site.webmanifest`, fundo grafite.
