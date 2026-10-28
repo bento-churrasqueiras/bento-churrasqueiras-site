@@ -110,3 +110,4 @@
 - Contato: WhatsApp passou a ser obrigatório. Assistência: sem anexo no site; a mensagem pede as fotos no WhatsApp.
 - Proteção: só aceita envio com Origin do site, campo invisível contra robôs e no máximo um lead por número/formulário/dia (external_ref derivado no servidor).
 - Depende da variável `SALOS_API_KEY` (escopo `leads:write`) no projeto da Vercel da Bento.
+- Botões de WhatsApp do número (54) 99688-9900 agora usam **links de captura do Salos** (`app.salos.com.br/l/<código>`), um por mensagem: Orçamento geral (inclui o flutuante e o rodapé), SmartGrill, DuraGrill, Elevatto, Grelhas, Acessórios, Suporte de fundo, Espetos suspensos, Começar projeto, Ajuda para escolher, Assistência técnica. O lead cai em Ativação › Entrada com origem "Site". Cliques/conversas/negócios por link na tela de Links do Salos. O 2º número (54) 99926-8929 ficou como `wa.me` (não está conectado ao Salos).

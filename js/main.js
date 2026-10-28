@@ -374,7 +374,7 @@
         form.reset();
       })
       .catch(function () {
-        aviso.innerHTML = 'Não conseguimos enviar agora. Tente de novo ou fale com a gente no <a href="https://wa.me/5554996889900" target="_blank" rel="noopener">WhatsApp</a>.';
+        aviso.innerHTML = 'Não conseguimos enviar agora. Tente de novo ou fale com a gente no <a href="https://app.salos.com.br/l/01409c5b6c3de8aea5466617a9a3b798" target="_blank" rel="noopener">WhatsApp</a>.';
       })
       .then(function () { botao.disabled = false; });
   }
