@@ -143,7 +143,7 @@
           </ul>
         </div>
 
-        <form class="chamado" action="#" method="post" enctype="multipart/form-data" data-chamado>
+        <form class="chamado" action="#" method="post" data-chamado="assistencia">
           <div class="chamado__campo">
             <label for="ch-nome">Nome</label>
             <input id="ch-nome" name="nome" type="text" autocomplete="name" required>
@@ -178,14 +178,7 @@
             <label for="ch-desc">O que está acontecendo?</label>
             <textarea id="ch-desc" name="descricao" rows="4" required></textarea>
           </div>
-          <div class="chamado__campo">
-            <span class="chamado__rotulo" id="ch-fotos-rotulo">Fotos do defeito</span>
-            <label class="chamado__arquivos" for="ch-fotos">
-              <input id="ch-fotos" name="fotos" type="file" accept="image/*" multiple aria-labelledby="ch-fotos-rotulo" data-arquivos>
-              <strong>Adicionar fotos</strong>
-              <span data-arquivos-texto>Toque para escolher ou arraste as imagens aqui</span>
-            </label>
-          </div>
+          <p class="chamado__intro">Fotos do defeito: depois de enviar, a gente te chama no WhatsApp e você manda as fotos por lá.</p>
           <div class="chamado__envio">
             <button class="botao" type="submit"><span>Enviar solicitação</span></button>
             <a class="link-seta" href="https://wa.me/5554996889900?text=Ol%C3%A1!%20Preciso%20de%20assist%C3%AAncia%20t%C3%A9cnica%20para%20a%20minha%20churrasqueira." target="_blank" rel="noopener" data-evento="whatsapp_assistencia">Prefiro o WhatsApp</a>

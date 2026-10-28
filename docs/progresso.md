@@ -101,3 +101,11 @@
 1. **Revisar as pendências acima com o cliente.**
 2. **Cenas por IA:** recebidas em 28/09 as de **SmartGrill, DuraGrill, Elevatto e Acessórios** (`assets/img/<linha>/cena-<linha>.webp`) — já na vitrine da home, na abertura das 4 páginas de linha e nos capítulos/faixas de Produtos (Rotativas usa a DuraGrill). A abertura das páginas de linha passou a mostrar a foto só nos 72% da direita (as cenas têm a churrasqueira no centro). Grelhas recebida em seguida (`grelhas/cena-grelhas.webp`, churrasqueira à direita → `background-position` à direita no HTML), na home e na abertura de /grelhas/. **Faltam:** Suporte de fundo, Espetos suspensos (família Minimalista) e a **versão vertical da hero** para o celular.
 3. Montagem no Elementor só quando o Lucas liberar.
+
+## 28/10/2026 — Formulários ligados ao Salos
+
+- Os formulários (catálogo, contato, assistência) mandam para `api/lead.js` (função da Vercel), que cria contato + card no Salos (funil Ativação › Entrada, origem "Site", etiqueta `Site · Catálogo|Contato|Assistência`, campanha UTM junto).
+- Automações no Salos "Site · … → WhatsApp": a etiqueta no contato dispara a mensagem pelo WhatsApp "Davi Comercial" e a etiqueta sai do contato (assim um novo pedido dispara de novo; o card continua etiquetado).
+- Catálogo 2026 publicado em `/assets/catalogo/catalogo-bento-2026.pdf` (link vai na mensagem).
+- Contato: WhatsApp passou a ser obrigatório. Assistência: sem anexo no site; a mensagem pede as fotos no WhatsApp.
+- Depende da variável `SALOS_API_KEY` (escopo `leads:write`) no projeto da Vercel da Bento.

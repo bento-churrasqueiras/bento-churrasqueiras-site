@@ -338,38 +338,68 @@
     }, { threshold: 0.15 }).observe(hero);
   }
 
-  /* ---------- Catálogo: só visual por enquanto (vira Fluent Forms no Elementor) ---------- */
+  /* ---------- Formulários → Salos (api/lead.js cria o card; a automação manda o WhatsApp) ---------- */
+  // guarda a campanha de quem chegou por anúncio, para ir junto com o lead
+  var UTM = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"];
+  try {
+    var busca = new URLSearchParams(location.search);
+    if (UTM.some(function (k) { return busca.get(k); })) {
+      var guardar = {};
+      UTM.forEach(function (k) { if (busca.get(k)) guardar[k] = busca.get(k); });
+      sessionStorage.setItem("bento-utm", JSON.stringify(guardar));
+    }
+  } catch (e) { /* sem sessionStorage: segue sem campanha */ }
+
+  function campanha() {
+    try { return JSON.parse(sessionStorage.getItem("bento-utm")) || {}; } catch (e) { return {}; }
+  }
+
+  function enviarLead(form, tipo, onde) {
+    var botao = form.querySelector("button[type=submit]");
+    var aviso = onde.querySelector(".aviso") || onde.appendChild(document.createElement("p"));
+    aviso.className = "aviso";
+    aviso.setAttribute("role", "status");
+    var dados = {};
+    new FormData(form).forEach(function (v, k) { if (typeof v === "string") dados[k] = v; });
+    dados.tipo = tipo;
+    dados.telefone = dados.telefone || dados.whatsapp;
+    dados.pagina = location.pathname;
+    dados.utm = campanha();
+    // mesmo ref em cada nova tentativa do mesmo envio: o Salos não duplica o lead
+    form._ref = form._ref || (window.crypto && crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2));
+    dados.ref = form._ref;
+    botao.disabled = true;
+    aviso.textContent = "Enviando…";
+    fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(dados) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); })
+      .then(function () {
+        aviso.textContent = form.dataset.sucesso;
+        form._ref = null;
+        form.reset();
+      })
+      .catch(function () {
+        aviso.innerHTML = 'Não conseguimos enviar agora. Tente de novo ou fale com a gente no <a href="https://wa.me/5554996889900" target="_blank" rel="noopener">WhatsApp</a>.';
+      })
+      .then(function () { botao.disabled = false; });
+  }
+
   document.querySelectorAll("[data-catalogo]").forEach(function (form) {
+    form.dataset.sucesso = "Pronto! Em instantes o catálogo chega no seu WhatsApp.";
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var aviso = form.querySelector(".aviso") || form.appendChild(document.createElement("p"));
-      aviso.className = "aviso";
-      aviso.setAttribute("role", "status");
-      aviso.textContent = "Protótipo: o envio será ligado ao formulário do site.";
+      enviarLead(form, "catalogo", form);
     });
   });
 
-  /* ---------- Assistência: fotos anexadas + envio (só visual; vira Fluent Forms) ---------- */
+  /* ---------- Contato e Assistência ---------- */
   document.querySelectorAll("[data-chamado]").forEach(function (form) {
-    var campo = form.querySelector("[data-arquivos]");
-    var caixa = campo && campo.closest(".chamado__arquivos");
-    var texto = form.querySelector("[data-arquivos-texto]");
-    var original = texto ? texto.textContent : "";
-    if (campo && texto) {
-      campo.addEventListener("change", function () {
-        var n = campo.files.length;
-        texto.textContent = n ? (n === 1 ? campo.files[0].name : n + " fotos selecionadas") : original;
-      });
-      ["dragenter", "dragover"].forEach(function (ev) { caixa.addEventListener(ev, function () { caixa.classList.add("arrastando"); }); });
-      ["dragleave", "drop"].forEach(function (ev) { caixa.addEventListener(ev, function () { caixa.classList.remove("arrastando"); }); });
-    }
+    var tipo = form.dataset.chamado || "contato";
+    form.dataset.sucesso = tipo === "assistencia"
+      ? "Recebemos sua solicitação. Vamos te chamar no WhatsApp; mande as fotos do defeito por lá."
+      : "Mensagem recebida! Vamos te responder pelo WhatsApp.";
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var envio = form.querySelector(".chamado__envio");
-      var aviso = envio.querySelector(".aviso") || envio.appendChild(document.createElement("p"));
-      aviso.className = "aviso";
-      aviso.setAttribute("role", "status");
-      aviso.textContent = "Protótipo: o envio será ligado ao formulário do site.";
+      enviarLead(form, tipo, form.querySelector(".chamado__envio"));
     });
   });
 
