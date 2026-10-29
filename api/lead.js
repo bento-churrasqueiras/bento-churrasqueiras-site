@@ -12,7 +12,9 @@ const ETAPA = "80a270a7-90bf-4506-94b6-c0d094be8621"; // Entrada
 const TIPOS = {
   catalogo: { etiqueta: "6eb4201e-b2b1-4fd8-b47c-f760a918e724", card: "Catálogo" },
   contato: { etiqueta: "7dbbec8e-56fd-4d34-90c8-1d36f08fb5f8", card: "Contato" },
-  assistencia: { etiqueta: "5f2bf642-d991-4f09-83b0-439699646b69", card: "Assistência" }
+  assistencia: { etiqueta: "5f2bf642-d991-4f09-83b0-439699646b69", card: "Assistência" },
+  // página /arquitetos/ (fora do menu): a automação da etiqueta manda o link do Drive com os blocos 3D
+  arquiteto: { etiqueta: "", card: "Arquiteto" } // TODO: id da etiqueta "Arquiteto" no Salos
 };
 
 const UTM = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"];
@@ -49,6 +51,8 @@ module.exports = async function (req, res) {
   var nota = [
     "Formulário: " + tipo.card + (pagina ? " (" + pagina + ")" : ""),
     produto && "Produto: " + produto,
+    texto(b.escritorio, 120) && "Escritório: " + texto(b.escritorio, 120),
+    texto(b.cidade, 80) && "Cidade: " + texto(b.cidade, 80),
     texto(b.descricao, 4000)
   ].filter(Boolean).join("\n");
 
@@ -56,7 +60,6 @@ module.exports = async function (req, res) {
     // um lead por número, por formulário, por dia: reenvio e abuso não multiplicam mensagens
     external_ref: "site-" + crypto.createHash("sha256").update(b.tipo + fone + new Date().toISOString().slice(0, 10)).digest("hex").slice(0, 32),
     source: "Site",
-    tags: [tipo.etiqueta],
     contact: { name: nome, phone: fone },
     deal: {
       name: "Site · " + tipo.card + " — " + nome,
@@ -65,6 +68,7 @@ module.exports = async function (req, res) {
       notes: nota
     }
   };
+  if (tipo.etiqueta) corpo.tags = [tipo.etiqueta];
   if (email) corpo.contact.email = email;
 
   var utm = {};

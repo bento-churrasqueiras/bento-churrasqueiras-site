@@ -401,9 +401,10 @@
   /* ---------- Contato e Assistência ---------- */
   document.querySelectorAll("[data-chamado]").forEach(function (form) {
     var tipo = form.dataset.chamado || "contato";
-    form.dataset.sucesso = tipo === "assistencia"
-      ? "Recebemos sua solicitação. Vamos te chamar no WhatsApp; mande as fotos do defeito por lá."
-      : "Mensagem recebida! Vamos te responder pelo WhatsApp.";
+    form.dataset.sucesso = {
+      assistencia: "Recebemos sua solicitação. Vamos te chamar no WhatsApp; mande as fotos do defeito por lá.",
+      arquiteto: "Cadastro feito! Em instantes o link dos blocos 3D chega no seu WhatsApp."
+    }[tipo] || "Mensagem recebida! Vamos te responder pelo WhatsApp.";
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       enviarLead(form, tipo, form.querySelector(".chamado__envio"));

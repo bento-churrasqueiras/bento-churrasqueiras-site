@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blocos 3D para arquitetos · Bento Churrasqueiras</title>
+  <meta name="description" content="Baixe os blocos 3D em SketchUp das churrasqueiras rotativas Bento, em todos os tamanhos. Cadastre-se e receba o link no WhatsApp.">
+  <!-- página fora do menu e do sitemap: o comercial manda o link direto para os arquitetos -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bento Churrasqueiras">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Blocos 3D para arquitetos · Bento Churrasqueiras">
+  <meta property="og:description" content="Os modelos em SketchUp das churrasqueiras rotativas Bento, em todos os tamanhos, para encaixar no seu projeto.">
+  <meta property="og:url" content="https://bentochurrasqueiras.com.br/arquitetos/">
+  <meta property="og:image" content="https://bentochurrasqueiras.com.br/assets/og/contato.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/marca/simbolo-bento.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/marca/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#292929">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preload" href="/assets/fontes/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fontes/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/estilo.css?v=1793218083">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- ============ HEADER (barra de vidro fixa: logo · links · WhatsApp) ============ -->
+  <header class="topo" data-topo>
+    <div class="container topo__barra">
+      <a class="topo__logo" href="/" aria-label="Bento Churrasqueiras — página inicial">
+        <img src="../assets/marca/logo-header.svg" alt="Bento Churrasqueiras" width="156" height="88">
+      </a>
+
+      <nav class="topo__nav" aria-label="Principal">
+        <ul>
+          <li><a href="/empresa/">Empresa</a></li>
+          <li class="topo__drop">
+            <button type="button" aria-expanded="false" aria-controls="drop-produtos" data-drop>
+              Produtos <span class="topo__seta" aria-hidden="true"></span>
+            </button>
+            <div class="topo__painel" id="drop-produtos">
+              <ul>
+                <li><a href="/smartgrill/">SmartGrill</a></li>
+                <li><a href="/duragrill/">DuraGrill</a></li>
+                <li><a href="/elevatto/">Elevatto</a></li>
+                <li><a href="/grelhas/">Grelhas</a></li>
+                <li><a href="/acessorios/">Acessórios</a></li>
+                <li class="topo__painel-todos"><a href="/produtos/">Todos os produtos</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="/projetos/">Projetos</a></li>
+          <li><a href="/assistencia/">Assistência</a></li>
+          <li><a href="/contato/">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a class="botao botao--wpp topo__wpp" href="https://app.salos.com.br/l/01409c5b6c3de8aea5466617a9a3b798" target="_blank" rel="noopener" data-evento="whatsapp_header">
+        <img src="../assets/icones/whatsapp-branco.svg" alt="" width="20" height="20">
+        <span>WhatsApp</span>
+      </a>
+
+      <!-- só no mobile: abre o menu em overlay -->
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu" data-menu-abrir>
+        <span class="menu-botao__circulo" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ MENU (overlay) ============ -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="menu__conteudo">
+      <nav class="menu__nav" aria-label="Menu completo">
+        <ul class="menu__lista">
+          <li><a href="/">Home</a></li>
+          <li><a href="/empresa/">Empresa</a></li>
+          <li>
+            <button class="menu__abre-sub" type="button" aria-expanded="false" aria-controls="submenu-produtos" data-submenu>
+              Produtos <span class="menu__seta" aria-hidden="true"></span>
+            </button>
+            <div class="menu__sub-caixa">
+            <ul class="menu__sub" id="submenu-produtos">
+              <li><a href="/produtos/">Todos os produtos</a></li>
+              <li><a href="/smartgrill/">SmartGrill</a></li>
+              <li><a href="/duragrill/">DuraGrill</a></li>
+              <li><a href="/elevatto/">Elevatto</a></li>
+              <li><a href="/grelhas/">Grelhas</a></li>
+              <li><a href="/acessorios/">Acessórios</a></li>
+            </ul>
+            </div>
+          </li>
+          <li><a href="/projetos/">Projetos</a></li>
+          <li><a href="/assistencia/">Assistência</a></li>
+          <li><a href="/contato/">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="menu__lado">
+        <p class="overline overline--claro">Fale com a fábrica</p>
+        <a class="botao botao--wpp" href="https://app.salos.com.br/l/01409c5b6c3de8aea5466617a9a3b798" target="_blank" rel="noopener" data-evento="whatsapp_menu">
+          <img src="../assets/icones/whatsapp-branco.svg" alt="" width="20" height="20">
+          <span>Pedir orçamento</span>
+        </a>
+        <ul class="menu__contatos">
+          <li><a href="tel:+5554996889900">(54) 99688-9900</a></li>
+          <li><a href="mailto:vendas@bentochurrasqueiras.com.br">vendas@bentochurrasqueiras.com.br</a></li>
+          <li>Seg a sex · 7h30–11h30 · 13h30–16h30</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <main id="conteudo">
+
+    <!-- ============ ABERTURA ============ -->
+    <section class="pg-abertura" aria-labelledby="pg-titulo">
+      <span class="linhas-intro__luz" aria-hidden="true"></span>
+      <div class="container pg-abertura__grade" data-revelar="carga">
+        <p class="overline pg-abertura__over"><span class="linhas-intro__traco" aria-hidden="true"></span>Para arquitetos e designers</p>
+        <h1 class="pg-abertura__titulo" id="pg-titulo" data-linhas>Blocos 3D para o seu projeto</h1>
+        <p class="pg-abertura__apoio">Os modelos em SketchUp das churrasqueiras rotativas Bento, em todos os tamanhos, para você encaixar no projeto. Cadastre-se e receba o link no seu WhatsApp.</p>
+        <div class="hero__acoes pg-abertura__acoes">
+          <a class="botao" href="#cadastro" data-evento="arquitetos_hero"><span>Quero os blocos 3D</span></a>
+          <a class="link-seta" href="#bibliotecas">Ver o que tem na pasta</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CADASTRO (escuro; o lead entra no Salos e a automação manda o link do Drive) ============ -->
+    <section class="atendimento" id="cadastro" aria-labelledby="cadastro-titulo">
+      <div class="container atendimento__grade">
+        <div class="atendimento__texto" data-revelar="scroll">
+          <p class="overline atendimento__over"><span class="contato__traco" aria-hidden="true"></span>Como funciona</p>
+          <h2 class="atendimento__titulo" id="cadastro-titulo" data-linhas>Três passos até o seu projeto</h2>
+          <ol class="atendimento__passos">
+            <li><span>01</span><div><strong>Cadastre-se</strong><p>Nome, WhatsApp e o seu escritório. Leva menos de um minuto.</p></div></li>
+            <li><span>02</span><div><strong>Receba o link no WhatsApp</strong><p>Em instantes chega a pasta com todos os blocos, separados por linha.</p></div></li>
+            <li><span>03</span><div><strong>Baixe só o que precisar</strong><p>Escolha a linha e o número de espetos. Cada arquivo é um .skp pronto para importar.</p></div></li>
+          </ol>
+          <ul class="atendimento__notas">
+            <li>Arquivos em SketchUp (.skp), de 8 a 30 MB cada. Vale baixar pelo computador.</li>
+            <li>Precisa de uma medida especial ou de ajuda para especificar? Fale com a fábrica pelo WhatsApp.</li>
+          </ul>
+        </div>
+
+        <form class="chamado" action="#" method="post" data-chamado="arquiteto">
+          <p class="chamado__intro">Preencha e a gente manda os blocos 3D no seu WhatsApp.</p>
+          <div class="chamado__campo">
+            <label for="arq-nome">Nome</label>
+            <input id="arq-nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+          <div class="chamado__dupla">
+            <div class="chamado__campo">
+              <label for="arq-fone">WhatsApp</label>
+              <input id="arq-fone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+            </div>
+            <div class="chamado__campo">
+              <label for="arq-email">E-mail</label>
+              <input id="arq-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="chamado__dupla">
+            <div class="chamado__campo">
+              <label for="arq-escritorio">Escritório</label>
+              <input id="arq-escritorio" name="escritorio" type="text" autocomplete="organization" required>
+            </div>
+            <div class="chamado__campo">
+              <label for="arq-cidade">Cidade (UF)</label>
+              <input id="arq-cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Ex.: Caxias do Sul (RS)" required>
+            </div>
+          </div>
+          <div class="chamado__envio">
+            <button class="botao" type="submit"><span>Receber os blocos 3D</span></button>
+          </div>
+          <p class="chamado__privacidade">Ao enviar, você concorda com a nossa <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ O QUE TEM NA PASTA (escuro) ============ -->
+    <!-- TODO cliente: confirmar que GSmart = SmartGrill com grelha automática conjugada e GLateral = grelha na lateral,
+         e que todas as linhas vão de 5 a 19 espetos (conferido só na pasta DuraGrill) -->
+    <section class="familia familia--sem-cena relacionadas" id="bibliotecas" aria-labelledby="bibliotecas-titulo">
+      <div class="container familia__cabeca" data-revelar="scroll">
+        <p class="overline familia__over">O que tem na pasta</p>
+        <h2 class="familia__titulo" id="bibliotecas-titulo" data-linhas>Quatro linhas, todos os tamanhos</h2>
+        <p class="familia__frase">Um arquivo para cada tamanho, de 5 a 19 espetos rotativos. É só escolher o que cabe no vão do seu projeto.</p>
+      </div>
+      <div class="container">
+        <ul class="fichas" data-revelar="scroll">
+          <li class="ficha">
+            <h3 class="ficha__nome">DuraGrill</h3>
+            <p class="ficha__resumo">Robustez clássica e mecânica de alta durabilidade, para uso intenso.</p>
+            <ul class="ficha__specs"><li><strong>5 a 19</strong><span>espetos rotativos</span></li><li><strong>.skp</strong><span>SketchUp</span></li></ul>
+          </li>
+          <li class="ficha">
+            <h3 class="ficha__nome">SmartGrill</h3>
+            <p class="ficha__resumo">Frente removível, com acesso ao fundo da máquina para limpar.</p>
+            <ul class="ficha__specs"><li><strong>5 a 19</strong><span>espetos rotativos</span></li><li><strong>.skp</strong><span>SketchUp</span></li></ul>
+          </li>
+          <li class="ficha">
+            <h3 class="ficha__nome">SmartGrill + Grelha</h3>
+            <p class="ficha__resumo">Espetos e grelha automática dividindo o mesmo vão.</p>
+            <ul class="ficha__specs"><li><strong>5 a 19</strong><span>espetos rotativos</span></li><li><strong>.skp</strong><span>SketchUp</span></li></ul>
+          </li>
+          <li class="ficha">
+            <h3 class="ficha__nome">SmartGrill + Grelha lateral</h3>
+            <p class="ficha__resumo">Espetos no centro e a grelha ao lado, no mesmo conjunto.</p>
+            <ul class="ficha__specs"><li><strong>5 a 19</strong><span>espetos rotativos</span></li><li><strong>.skp</strong><span>SketchUp</span></li></ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ POR QUE ESPECIFICAR BENTO (claro quente) ============ -->
+    <section class="passos" aria-labelledby="passos-titulo">
+      <div class="container">
+        <div class="passos__cabeca" data-revelar="scroll">
+          <p class="overline passos__over"><span class="comparativo__traco" aria-hidden="true"></span>Para o seu cliente</p>
+          <h2 class="passos__titulo" id="passos-titulo" data-linhas>Por que especificar Bento</h2>
+        </div>
+        <ol class="passos__lista" data-revelar="scroll">
+          <li class="passo"><span class="passo__num">Sob medida</span><h3>Feita para o vão</h3><p>Se o espaço não bate com nenhum bloco, a fábrica ajusta a churrasqueira ao projeto.</p></li>
+          <li class="passo"><span class="passo__num">Inox 304</span><h3>Por inteiro</h3><p>Todo o equipamento em aço inox 304, que aguenta calor, gordura e tempo.</p></li>
+          <li class="passo"><span class="passo__num">5 anos</span><h3>De garantia</h3><p>Na parte mecânica, com assistência e retorno em até 48 horas.</p></li>
+          <li class="passo"><span class="passo__num">Desde 2004</span><h3>Fábrica própria</h3><p>Projetada e fabricada em Garibaldi (RS), com atendimento direto da fábrica.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ DÚVIDAS (claro quente) ============ -->
+    <section class="faq" aria-labelledby="faq-titulo">
+      <div class="container faq__grade">
+        <div class="faq__cabeca" data-revelar="scroll">
+          <p class="overline faq__over"><span class="comparativo__traco" aria-hidden="true"></span>Dúvidas</p>
+          <h2 class="faq__titulo" id="faq-titulo" data-linhas>Perguntas frequentes</h2>
+          <div class="hero__acoes faq__acoes">
+            <a class="botao" href="#cadastro"><span>Quero os blocos 3D</span></a>
+          </div>
+        </div>
+        <div class="faq__lista">
+          <details><summary>Os blocos são gratuitos?</summary><p>Sim. É só se cadastrar para receber o link da pasta no WhatsApp.</p></details>
+          <details><summary>Em que formato vêm os arquivos?</summary><p>Em SketchUp (.skp), um arquivo por linha e por número de espetos. Se você trabalha com outro programa, chame a gente no WhatsApp.</p></details>
+          <details><summary>O vão do meu projeto não bate com nenhum tamanho. E agora?</summary><p>Use o bloco mais próximo como referência. A churrasqueira é fabricada sob medida, então mande as medidas do espaço pelo WhatsApp e a fábrica indica o modelo certo.</p></details>
+          <details><summary>Como faço o orçamento para o meu cliente?</summary><p>Pelo WhatsApp, com o modelo escolhido e as medidas do espaço. Você fala direto com a fábrica.</p></details>
+          <details><summary>O link não chegou no meu WhatsApp.</summary><p>Confira se o número foi digitado com DDD. Se ainda assim não chegar, <a href="https://app.salos.com.br/l/01409c5b6c3de8aea5466617a9a3b798" target="_blank" rel="noopener" data-evento="whatsapp_arquitetos_faq">chame a gente no WhatsApp</a> que mandamos na hora.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__topo">
+        <div class="rodape__marca">
+          <a href="/" aria-label="Bento Churrasqueiras — página inicial">
+            <img src="../assets/marca/logo-footer.svg" alt="Bento Churrasqueiras" width="142" height="80" loading="lazy">
+          </a>
+          <p>Churrasqueiras rotativas sob medida em Inox 304, fabricadas em Garibaldi (RS) desde 2004.</p>
+          <ul class="rodape__redes">
+            <li><a href="https://www.instagram.com/bentochurrasqueiras/" target="_blank" rel="noopener" aria-label="Instagram"><img src="../assets/icones/instagram.svg" alt="" width="20" height="20"></a></li>
+            <li><a href="https://www.facebook.com/BentoChurrasqueiras/" target="_blank" rel="noopener" aria-label="Facebook"><img src="../assets/icones/facebook.svg" alt="" width="20" height="20"></a></li>
+          </ul>
+        </div>
+
+        <div class="rodape__colunas">
+          <nav class="rodape__col" aria-labelledby="rod-produtos">
+            <h2 id="rod-produtos">Produtos</h2>
+            <ul>
+              <li><a href="/smartgrill/">Linha SmartGrill</a></li>
+              <li><a href="/duragrill/">Linha DuraGrill</a></li>
+              <li><a href="/elevatto/">Linha Elevatto</a></li>
+              <li><a href="/grelhas/">Grelhas</a></li>
+              <li><a href="/acessorios/">Acessórios</a></li>
+            </ul>
+          </nav>
+          <nav class="rodape__col" aria-labelledby="rod-empresa">
+            <h2 id="rod-empresa">Empresa</h2>
+            <ul>
+              <li><a href="/empresa/">Sobre nós</a></li>
+              <li><a href="/projetos/">Projetos</a></li>
+              <li><a href="/assistencia/">Assistência</a></li>
+              <li><a href="/contato/">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="rodape__col">
+            <h2>Atendimento</h2>
+            <ul>
+              <li><a href="https://app.salos.com.br/l/01409c5b6c3de8aea5466617a9a3b798" target="_blank" rel="noopener" data-evento="whatsapp_rodape">(54) 99688-9900</a></li>
+              <!-- TODO cliente: confirmar se este 2º número está ativo -->
+              <li><a href="https://wa.me/5554999268929" target="_blank" rel="noopener" data-evento="whatsapp_rodape_2">(54) 99926-8929</a></li>
+              <li><a href="mailto:vendas@bentochurrasqueiras.com.br">vendas@bentochurrasqueiras.com.br</a></li>
+              <li>Seg a sex · 7h30–11h30 e 13h30–16h30</li>
+              <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Francisco+Jos%C3%A9+Milani+166+Garibaldi+RS" target="_blank" rel="noopener">Rua Francisco José Milani, 166<br>Linha Garibaldina · Garibaldi/RS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="rodape__base">
+        <p>© <span data-ano>2026</span> Bento Churrasqueiras · CNPJ 21.482.236/0001-81</p>
+        <ul class="rodape__legal">
+          <li><a href="/politica-de-privacidade/">Política de Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante (aparece depois do hero) -->
+  <a class="wpp-flutuante" href="https://app.salos.com.br/l/01409c5b6c3de8aea5466617a9a3b798" target="_blank" rel="noopener" aria-label="Pedir orçamento no WhatsApp" data-evento="whatsapp_flutuante">
+    <img src="../assets/icones/whatsapp-branco.svg" alt="" width="28" height="28">
+  </a>
+
+  <script src="../js/lenis.min.js?v=1.3.26" defer></script>
+  <script src="../js/main.js?v=1793301049" defer></script>
+</body>
+</html>
