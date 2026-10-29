@@ -14,7 +14,7 @@ const TIPOS = {
   contato: { etiqueta: "7dbbec8e-56fd-4d34-90c8-1d36f08fb5f8", card: "Contato" },
   assistencia: { etiqueta: "5f2bf642-d991-4f09-83b0-439699646b69", card: "Assistência" },
   // página /arquitetos/ (fora do menu): a automação da etiqueta manda o link do Drive com os blocos 3D
-  arquiteto: { etiqueta: "", card: "Arquiteto" } // TODO: id da etiqueta "Arquiteto" no Salos
+  arquiteto: { etiqueta: "a189d2c6-4eba-4456-9345-c67448a3a586", card: "Arquiteto" }
 };
 
 const UTM = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"];
