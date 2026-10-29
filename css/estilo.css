@@ -1218,6 +1218,31 @@ html.lenis { scroll-behavior: auto; }
   text-wrap: balance;
 }
 .pg-abertura__apoio { margin-top: 26px; max-width: 580px; font-size: 18px; line-height: 1.65; color: rgba(255, 255, 255, .65); }
+/* abertura com quadriculado de prancha técnica (/arquitetos/): malha fina + malha maior, esmaecendo nas bordas */
+.pg-abertura--planta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(rgba(255, 255, 255, .11) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(90deg, rgba(255, 255, 255, .11) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px) 0 0 / 24px 24px;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(ellipse 70% 75% at 50% 45%, #000 20%, transparent 85%);
+          mask-image: radial-gradient(ellipse 70% 75% at 50% 45%, #000 20%, transparent 85%);
+}
+/* brilho quente por baixo, como a brasa da home */
+.pg-abertura--planta::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -30%;
+  height: 70%;
+  z-index: -2;
+  background: radial-gradient(ellipse 45% 60% at 50% 100%, rgba(242, 110, 34, .22), transparent 70%);
+  pointer-events: none;
+}
 
 /* vitrine de famílias: faixas com imagem; a faixa em hover/foco se expande */
 .faixas {
