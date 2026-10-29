@@ -1794,6 +1794,14 @@ html.lenis { scroll-behavior: auto; }
 /* capítulo sem cena (ex.: outras linhas) */
 .familia--sem-cena .familia__cabeca { padding-top: clamp(110px, 10vw, 180px); }
 
+/* blocos 3D (/arquitetos/): fichas agrupadas por família */
+.biblioteca { margin-top: clamp(56px, 5vw, 80px); }
+.biblioteca__familia { color: var(--laranja); letter-spacing: .32em; }
+.biblioteca .fichas { margin-top: 20px; }
+.biblioteca .ficha__nome { margin: 0; } /* h4: o reset só zera até h3 */
+.bibliotecas__nota { margin-top: clamp(48px, 4vw, 64px); font-size: 15px; color: rgba(255, 255, 255, .6); }
+.bibliotecas__nota a { color: var(--branco); }
+
 @media (max-width: 900px) {
   .destaques__lista { grid-template-columns: 1fr 1fr; }
   .destaques__lista li:nth-child(3) { border-left: 0; padding-left: 0; }
