@@ -2317,9 +2317,8 @@ html.lenis { scroll-behavior: auto; }
   .numero:nth-child(n+3) { border-top: 1px solid rgba(41, 41, 41, .14); }
 }
 
-@media (max-width: 1024px) {
-  .contato__grade { grid-template-columns: 1fr; align-items: start; }
-  .contato__cena { width: 100%; opacity: .3; }
+/* menu hambúrguer até 1239px: com 6 itens o menu completo só cabe ao lado do logo e do WhatsApp a partir de ~1250px */
+@media (max-width: 1239px) {
   .topo__nav, .topo__wpp { display: none; }
   .topo__barra { grid-template-columns: 1fr auto; padding: 0 12px 0 28px; height: 84px; }
   .menu-botao { display: flex; justify-self: end; }
@@ -2330,7 +2329,11 @@ html.lenis { scroll-behavior: auto; }
   .menu-botao[aria-expanded="true"] .menu-botao__circulo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   /* com o menu aberto, a barra fica transparente e só o logo e o X aparecem */
   body.menu-aberto .topo__barra { background: transparent; border-color: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
 
+@media (max-width: 1024px) {
+  .contato__grade { grid-template-columns: 1fr; align-items: start; }
+  .contato__cena { width: 100%; opacity: .3; }
   .menu__conteudo { grid-template-columns: 1fr; padding-top: 200px; }
   .menu__lado { padding-top: 0; }
 
