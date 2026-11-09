@@ -84,6 +84,96 @@
       "source": "/:pagina(loja|minha-conta|finalizar-compra|carrinho|backup|teste-formulario|404-2|lp-v1|lp-google|home)(/.*)?",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/produto/:item(nova-smartgrill[^/]*|g-smart-grill[^/]*|churrasqueiras-linha-g-smart[^/]*)(/.*)?",
+      "destination": "/smartgrill/",
+      "permanent": true
+    },
+    {
+      "source": "/produto/:item(grelha[^/]*)(/.*)?",
+      "destination": "/grelhas/",
+      "permanent": true
+    },
+    {
+      "source": "/produto/:item(espeto[^/]*|bifeira[^/]*|chapa[^/]*|acendedor[^/]*|acessorio[^/]*|chaira[^/]*)(/.*)?",
+      "destination": "/acessorios/",
+      "permanent": true
+    },
+    {
+      "source": "/produto(/.*)?",
+      "destination": "/produtos/",
+      "permanent": true
+    },
+    {
+      "source": "/:pagina(produtos|lista-produtos|planta).php",
+      "destination": "/produtos/",
+      "permanent": true
+    },
+    {
+      "source": "/plantas(/.*)?",
+      "destination": "/produtos/",
+      "permanent": true
+    },
+    {
+      "source": "/:pagina(contato|orcamento).php",
+      "destination": "/contato/",
+      "permanent": true
+    },
+    {
+      "source": "/:pagina(onde-encontrar|seja-representante)(/.*)?",
+      "destination": "/contato/",
+      "permanent": true
+    },
+    {
+      "source": "/empresa.php",
+      "destination": "/empresa/",
+      "permanent": true
+    },
+    {
+      "source": "/:pagina(privacidade).php",
+      "destination": "/politica-de-privacidade/",
+      "permanent": true
+    },
+    {
+      "source": "/projetos.php",
+      "destination": "/projetos/",
+      "permanent": true
+    },
+    {
+      "source": "/projetos-videos(/.*)?",
+      "destination": "/projetos/",
+      "permanent": true
+    },
+    {
+      "source": "/:pagina(index|index.php|novidades|novidades.php)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/novidades(/.*)?",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:pagina(assistencia|contato|projetos)-old(/.*)?",
+      "destination": "/:pagina/",
+      "permanent": true
+    },
+    {
+      "source": "/:pagina(categorias|depoimento|depoimentos|2020|2021|2022|2023|2024)(/.*)?",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:post(bento-churrasqueiras-qualidade-tecnologia|bento-churrasqueiras-sobmedida|erros-que-estragam-o-churrasco-saiba-o-que-nao-fazer|churrasqueiras-rotativas-em-bento-goncalves)(/.*)?",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bifeiras-de-sobrepor-inox-304(/.*)?",
+      "destination": "/acessorios/",
+      "permanent": true
     }
   ],
   "headers": [
